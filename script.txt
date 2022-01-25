@@ -1,0 +1,10 @@
+create database tasks;
+create user 'user'@'localhost' identified by 'password';
+grant all on tasks.* to 'user'@'localhost';
+
+java -jar tasklist-0.0.1-SNAPSHOT.jar
+
+cd front-end
+set-ExecutionPolicy RemoteSigned -Scope CurrentUser 
+npm install -g serve
+serve -s build
